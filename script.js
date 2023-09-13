@@ -22,7 +22,7 @@ function checkWinner() {
       disableClicks = true;
       setTimeout(() => {
         reload();
-      }, 2000);
+      }, 3000);
     }
   }
 
@@ -30,7 +30,7 @@ function checkWinner() {
     heading.innerText = `Draw!`;
     setTimeout(() => {
       reload();
-    }, 2000);
+    }, 3000);
   }
 }
 
