@@ -17,7 +17,7 @@ const winningCombos = [
 function checkWinner() {
   for (const combo of winningCombos) {
     const [a, b, c] = combo;
-    if (arr[a] && arr[a] === arr[b] && arr[a] === arr[c]) {
+    if (arr[a] && arr[a] === arr[b] && arr[b] === arr[c]) {
       heading.innerText = `'${currentPlayer}' won! 💐`;
       disableClicks = true;
       setTimeout(() => {
