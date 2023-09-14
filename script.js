@@ -35,7 +35,7 @@ function checkWinner() {
 }
 
 function reload() {
-  setTimeout(location.reload(), 3000);
+  setTimeout(() => location.reload(), 3000);
 }
 
 function handleClick(el) {
@@ -43,10 +43,11 @@ function handleClick(el) {
   const id = Number(el.id);
   if (arr[id] != null) return;
   arr[id] = currentPlayer;
-  el.innerText = currentPlayer;
   checkWinner();
+  el.innerText = currentPlayer;
   currentPlayer = currentPlayer === "X" ? "O" : "X";
 }
+
 
 // function checkWinner() {
 //   if (
