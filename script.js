@@ -35,7 +35,7 @@ const heading = document.getElementById("main-heading");
  } 
   
  function reload() { 
-   setTimeout(location.reload(), 3000); 
+   location.reload(); 
  } 
   
  function handleClick(el) { 
