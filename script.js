@@ -22,15 +22,16 @@ const heading = document.getElementById("main-heading");
        disableClicks = true; 
        setTimeout(() => { 
          reload(); 
-       }, 3000); 
+       }, 2000); 
      } 
    } 
   
    if (!arr.includes(null)) { 
+     checkWinner();
      heading.innerText = `Draw!`; 
      setTimeout(() => { 
        reload(); 
-     }, 3000); 
+     }, 2000); 
    } 
  } 
   
