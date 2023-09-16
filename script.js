@@ -1,4 +1,6 @@
 const heading = document.getElementById("main-heading");
+const cells = document.querySelectorAll(".col");
+
 let currentPlayer = "X";
 let arr = Array(9).fill(null);
 let disableClicks = false;
@@ -20,22 +22,20 @@ function checkWinner() {
     if (arr[a] && arr[a] === arr[b] && arr[a] === arr[c]) {
       heading.innerText = `'${currentPlayer}' won! 💐`;
       disableClicks = true;
-      setTimeout(() => {
-        reload();
-      }, 2000);
+      setTimeout(reload, 2000);
+      return;
     }
   }
 
   if (!arr.includes(null)) {
     heading.innerText = `Draw!`;
-    setTimeout(() => {
-      reload();
-    }, 2000);
+    disableClicks = true;
+    setTimeout(reload, 2000);
   }
 }
 
 function reload() {
-  setTimeout(location.reload(), 3000);
+  location.reload();
 }
 
 function handleClick(el) {
@@ -47,3 +47,7 @@ function handleClick(el) {
   checkWinner();
   currentPlayer = currentPlayer === "X" ? "O" : "X";
 }
+
+cells.forEach((cell) => {
+  cell.addEventListener("click", () => handleClick(cell));
+});
